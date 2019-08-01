@@ -20,5 +20,5 @@ The app runs on these ports:
 <h1>Deploying to IBM Cloud Foundry</h1>
 <ol>
 <li>On your computer login to IBM Cloud with this command: ibmcloud login</li>
-<li>Deploy to IBM Cloud Foundry with this command: ibmcloud app push <appname></li>
+<li>Deploy to Cloud Foundry on IBM Cloud with this command: ibmcloud app push <appname></li>
 </ol>
