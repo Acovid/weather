@@ -3,12 +3,13 @@ const request = require("request");
 const forecast = (latitude, longitude, callback) => {
   const url = `https://api.darksky.net/forecast/830e46914bf24cb9ce62ec3745ad8ba9/${latitude},${longitude}?units=si&lang=en`;
 
-  request(
-    {
+  request({
       url,
       json: true
     },
-    (error, { body }) => {
+    (error, {
+      body
+    }) => {
       if (error) {
         callback("Unable to connect to Weather service", undefined);
       } else if (body.error) {
@@ -16,7 +17,7 @@ const forecast = (latitude, longitude, callback) => {
       } else {
         callback(
           undefined,
-          `${body.daily.data[0].summary} It is currently ${
+          `Forecast: ${body.daily.data[0].summary} It is currently ${
             body.currently.temperature
           } C out. Todays high temperature ${
             body.daily.data[0].temperatureHigh
